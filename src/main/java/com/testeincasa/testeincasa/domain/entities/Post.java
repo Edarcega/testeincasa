@@ -1,5 +1,6 @@
 package com.testeincasa.testeincasa.domain.entities;
 
+import com.testeincasa.testeincasa.domain.entities.DTO.AuthorDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,17 +17,17 @@ public class Post implements Serializable {
     private Date date;
     private String title;
     private String body;
-    private User autor;
+    private AuthorDTO author;
 
     public Post() {
     }
 
-    public Post(String id, Date date, String title, String body, User user) {
+    public Post(String id, Date date, String title, String body, AuthorDTO user) {
         this.id = id;
         this.date = date;
         this.title = title;
         this.body = body;
-        this.autor = user;
+        this.author = user;
     }
 
     public String getId() {
@@ -61,12 +62,12 @@ public class Post implements Serializable {
         this.body = body;
     }
 
-    public User getAutor() {
-        return autor;
+    public AuthorDTO getAuthor() {
+        return author;
     }
 
-    public void setAutor(User autor) {
-        this.autor = autor;
+    public void setAuthor(AuthorDTO author) {
+        this.author = author;
     }
 
     @Override
