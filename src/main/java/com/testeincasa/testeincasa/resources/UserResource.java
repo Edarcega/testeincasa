@@ -1,6 +1,7 @@
 package com.testeincasa.testeincasa.resources;
 
 import com.testeincasa.testeincasa.domain.entities.DTO.UserDTO;
+import com.testeincasa.testeincasa.domain.entities.Post;
 import com.testeincasa.testeincasa.domain.entities.User;
 import com.testeincasa.testeincasa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,12 @@ public class UserResource {
         user = userService.update(user);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User user = userService.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
+    }
+
 
 }
