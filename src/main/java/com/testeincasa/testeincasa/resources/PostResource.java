@@ -1,18 +1,13 @@
 package com.testeincasa.testeincasa.resources;
 
-import com.testeincasa.testeincasa.domain.entities.DTO.UserDTO;
 import com.testeincasa.testeincasa.domain.entities.Post;
-import com.testeincasa.testeincasa.domain.entities.User;
 import com.testeincasa.testeincasa.services.PostService;
-import com.testeincasa.testeincasa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping(value = "/posts")
